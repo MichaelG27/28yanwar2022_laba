@@ -6,6 +6,7 @@ const b = 5;
 const h = 0.1;
 let x = a;
 let results = [];
+let dots = []
 for(x; x < b; x = x + h) {
   let arg = x;
   let firstStep = `${x}e^(${x})`;
@@ -19,6 +20,8 @@ for(x; x < b; x = x + h) {
   let ninthStep = thirdStep - eigthsStep;
   let tenthStep = ninthStep.toFixed(4)
   let result = firstStep + ` + ${tenthStep}`;
+  let dot = [arg, tenthStep];
+  dots.push(dot);
   console.log(`При аргументе ${arg} функция равна ${result}`);
   results.push(tenthStep)
 }
@@ -46,3 +49,4 @@ for (let i = 0; i < results.lenghts; i++) {
 }
 
 console.log(`Минималное значение ${minimum}, повторяется ${count_of_minimum} раз(а)`);  
+
